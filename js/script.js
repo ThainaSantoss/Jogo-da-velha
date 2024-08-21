@@ -37,7 +37,7 @@ function renderInfo() { // Updates information in the user interface, showing wh
       document.querySelector('.resultado').innerHTML = warning;
 }
 
-function togglePlayer(){
+function togglePlayer(){ // toggle
  player = (player ==='x') ? 'o' : 'x';
  renderInfo();
 }
@@ -48,7 +48,7 @@ function checkGame() {
     warning = 'O "x" venceu';
     playing = false;
     drawLine(winner);
-  } else {
+  } else{
     winner = checkWinnerFor('o');
     if(winner) {
       warning = 'O "o" venceu';
@@ -60,7 +60,7 @@ function checkGame() {
     }
   }
 }
-function checkWinnerFor(player) { // sequencias
+function checkWinnerFor(player) { // sequences
     let pos = [
       'a1,a2,a3',
       'b1,b2,b3',
@@ -120,10 +120,10 @@ function reset() {
       item.classList.remove('winner');
   });
 
-    let random = Math.floor(Math.random() * 2); // random number and then it will be rounded
+    let random = Math.floor(Math.random() * 2); // generates a random number to decide which player starts the game.
     player = (random === 0 ) ? 'x' : 'o'
 
-  for(let i in square) {
+  for(let i in square) { // reset the object's items
     square[i] = '';
   }
 
