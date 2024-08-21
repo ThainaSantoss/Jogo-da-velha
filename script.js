@@ -4,6 +4,7 @@ let square = {
     b1: '', b2: '', b3: '',
     c1:'', c2: '', c3: ''
 };
+
 let player = '';
 // winner variable
 let warning = '';
@@ -42,15 +43,21 @@ function togglePlayer(){
 }
 
 function checkGame() {
-  if(checkWinnerFor('x')){
+  let winner = checkWinnerFor('x');
+  if(winner) {
     warning = 'O "x" venceu';
     playing = false;
-  } else if(checkWinnerFor('o')){
-    warning = 'O "o" venceu';
-    playing = false;
-  } else if(isFull()) {
-    warning = 'Deu empate';
-    playing = false;
+    drawLine(winner);
+  } else {
+    winner = checkWinnerFor('o');
+    if(winner) {
+      warning = 'O "o" venceu';
+      playing = false;
+      drawLine(winner);
+    } else if(isFull()) {
+      warning = 'Deu empate';
+      playing = false;
+    }
   }
 }
 function checkWinnerFor(player) { // sequencias
@@ -69,13 +76,20 @@ function checkWinnerFor(player) { // sequencias
 
     for(let w in pos) {
       let pArray = pos[w].split(','); //a1,a2,a3
-    let hasWon =  pArray.every(option => square[option] === player);
-    if(hasWon) {
-      return true;
-    } 
-    
+      let hasWon = pArray.every(option => square[option] === player);
+      if(hasWon) {
+        return pArray; // // Returns to winning positions
+      } 
     }
-      return false
+    return null; 
+}
+
+function drawLine(positions) {
+  // class to highlight winning cells
+  positions.forEach(pos => {
+    document.querySelector(`div[data-item=${pos}]`).classList.add('winner');
+
+  });
 }
 
 function isFull() { // Check if all cells on the board are filled.
@@ -102,7 +116,11 @@ function itemClick(event) {
 function reset() {
     warning = '';
 
-    let random = Math.floor(Math.random() * 2); // numero aleatorio e depois vai arredondar
+    document.querySelectorAll('.item').forEach(item => {
+      item.classList.remove('winner');
+  });
+
+    let random = Math.floor(Math.random() * 2); // random number and then it will be rounded
     player = (random === 0 ) ? 'x' : 'o'
 
   for(let i in square) {

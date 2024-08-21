@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -10,12 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #333;
+    background-color: #9ccc5d;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    color: #FFF;
+    color: #ffffff;
     margin: 20px 0;
 }
 
@@ -33,7 +36,7 @@ h1 {
     align-items: center;
     font-size: 60px;
     font-weight: bold;
-    color: #FFF;
+    color: #ffffff;
     cursor: pointer;
 }
 .item:hover {
@@ -41,7 +44,7 @@ h1 {
 }
 
 .item.t {
-    border-top: 1px solid #FFF;
+    border-top: 1px solid #ffffff;
 }
 .item.l {
     border-left: 1px solid #FFF;
@@ -50,8 +53,14 @@ h1 {
     border-right: 1px solid #FFF;
 }
 .item.b {
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #ffffff;
 }
+
+.winner {
+    background-color: #ffeb3b; /* Altere para a cor que preferir */
+    border-radius: 5px;
+  }
+
 
 .info {
     width: 300px;
@@ -75,9 +84,14 @@ h1 {
 }
 
 .reset {
-    border: 1px solid #000;
-    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #b6faa2;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.719);
     color: #FFF;
     padding: 10px;
     margin-top: 20px;
+}
+
+.reset:hover {
+    background-color: #435c23;
 }
