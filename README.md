@@ -18,20 +18,14 @@ Este é um simples Jogo da Velha desenvolvido com JavaScript, HTML e CSS. O jogo
 ## Como Usar
 
 1.  Clone este repositório em sua máquina local:
+
     
-    bash
-    
-    Copiar código
-    
-    `git clone https://github.com/seu-usuario/seu-repositorio.git` 
+    `git clone https://github.com/ThainaSantoss/Jogo-da-velha.git` 
     
 2.  Navegue até o diretório do projeto:
+
     
-    bash
-    
-    Copiar código
-    
-    `cd nome-do-diretorio` 
+    `cd Jogo-da-velha` 
     
 3.  Abra o arquivo `index.html` em seu navegador para começar a jogar.
     
